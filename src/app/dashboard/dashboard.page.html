@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Welcome {{loggedinuser}}</ion-card-subtitle>
+    <ion-card-title>You are logged in</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+   You are logged in using JWT
+  </ion-card-content>
+  <ion-button color="danger" (click)='logout()'>Logout</ion-button>
+</ion-card>
+</ion-content>

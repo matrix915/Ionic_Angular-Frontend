@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color=primary>
+    <ion-title>
+      Singup/Login Mean Stack
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding" text-center>
+   <h2>Welcome to MEAN STACK Registration/Login using JWT</h2>
+   
+   <p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button [routerLink]="['/signup']" routerLinkActive="router-link-active" >Singup</ion-button>
+        </ion-col>
+          <ion-col>
+          <ion-button [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   </p>
+  </div>
+</ion-content>

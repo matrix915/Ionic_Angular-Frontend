@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot=start>
+      <ion-back-button defaultHref="home" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmitLogin(f)">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        
+        <ion-img src= '../../assets/images/icon_login.png' style="height:200px;"></ion-img>
+       
+      </ion-col>
+    </ion-row>
+  <ion-card padding>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input type="text" ngModel  name="username" required  #usernameCtrl="ngModel"></ion-input>
+          <p *ngIf="!usernameCtrl.valid && usernameCtrl.touched">Username is Invalid</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" ngModel  name="password" #pwdCtrl="ngModel" minlength=6></ion-input>
+            <p *ngIf="!pwdCtrl.valid && pwdCtrl.touched">Password need atleast 6 characters</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+   
+      <ion-row><ion-col>
+         <ion-item>
+            <ion-checkbox name="rememberme"  [(ngModel)]="isChecked"  #rememberCtrl="ngModel" (click) = "onRememberMeClick(isChecked?false:true)"></ion-checkbox>
+            <ion-label>&nbsp;Remember Me</ion-label>
+          </ion-item>
+      </ion-col> </ion-row>
+  
+
+    <ion-row>
+      <ion-col text-center >
+        <ion-button type=submit [disabled]="!f.valid" >Login</ion-button>
+        <ion-button [routerLink]="['/signup']" routerLinkActive="router-link-active"  >Register</ion-button>
+      </ion-col>
+    </ion-row>
+    </ion-card>
+  </ion-grid></form>
+</ion-content>
